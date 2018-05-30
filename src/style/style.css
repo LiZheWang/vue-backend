@@ -1,0 +1,12 @@
+@charset "utf-8";
+@import "fns.css";
+/*页面初始化*/
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,162 @@
+.tc {
+  text-align: center;
+}
+.tl {
+  text-align: left;
+}
+.tr {
+  text-align: right;
+}
+.rela {
+  position: relative;
+}
+.abso {
+  position: absolute;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.hide {
+  display: none;
+}
+.clearfix::before,
+.clearfix::after,
+.clear,
+.row::before,
+.row::after {
+  clear: both;
+  content: ' ';
+  display: block;
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+}
+.fontnum {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/*转场 start*/
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.4s ease-out;
+  position: absolute;
+}
+.slide-fade-enter {
+  opacity: 0;
+  transform: translateX(50px);
+}
+.slide-fade-leave-active {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+/*转场 end*/
+.logotop {
+  height: 60px;
+  line-height: 60px;
+}
+/*左侧菜单  start*/
+.page-container {
+  margin-left: 255px;
+}
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+  width: 255px;
+}
+.scrollbarLeftmenuWrap {
+  position: fixed;
+  display: block;
+  z-index: 10 ;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  background: #001529;
+  /*element-ui左侧菜单样式修改   不喜欢想用默认的可以直接删掉   start*/
+  /*element-ui左侧菜单样式修改   不喜欢想用默认的可以直接删掉   end*/
+}
+.scrollbarLeftmenuWrap .systemLogo {
+  height: 60px;
+  line-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  background: #002140;
+  text-align: center;
+  font-family: "Myriad Pro", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  padding-right: 17px;
+}
+.scrollbarLeftmenuWrap .systemLogo img {
+  display: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.scrollbarLeftmenuWrap .fa {
+  color: #fff;
+  margin-right: 4px;
+  font-size: 18px;
+}
+.scrollbarLeftmenuWrap .el-scrollbar__wrap {
+  overflow: hidden;
+}
+.scrollbarLeftmenuWrap .el-menu-item-group__title {
+  padding: 3px 0 3px 20px;
+}
+.scrollbarLeftmenuWrap .el-menu-item-group > ul > .el-menu-item {
+  background: #000C17!important;
+  height: 40px;
+  line-height: 40px;
+}
+.scrollbarLeftmenuWrap .el-menu-item-group > ul > .el-menu-item.is-active {
+  background: #1890ff!important;
+}
+.scrollbarLeftmenuWrap .el-submenu .el-menu-item {
+  min-width: auto;
+}
+.scrollbarLeftmenuWrap .el-menu-item,
+.scrollbarLeftmenuWrap .el-submenu__title {
+  height: 45px;
+  line-height: 45px;
+}
+/*左侧菜单  end*/
+/*页面header  start*/
+.pageHeader {
+  height: 60px;
+  line-height: 60px;
+  padding: 0 12px 0 0;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  position: relative;
+}
+.pageHeader .onoffButton {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.65);
+}
+.pageHeader .rightTools {
+  position: absolute;
+  top: 0;
+  right: 0px;
+}
+.pageHeader .rightTools .user .el-dropdown-link {
+  cursor: pointer;
+  padding: 0 20px;
+  line-height: 60px;
+  display: block;
+}
+.pageHeader .rightTools .user:hover,
+.pageHeader .onoffButton:hover {
+  background: #e6f7ff;
+}
+/*页面header end*/
