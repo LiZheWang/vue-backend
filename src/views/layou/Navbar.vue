@@ -2,10 +2,12 @@
 
     <div>
         <el-scrollbar class="scrollbarLeftmenuWrap" wrapClass="scrollbarLeftmenu">
-            <a href="/" class="systemLogo"><img src="../../assets/logo.png" alt="">多动屏</a>
+          <router-link class="systemLogo" to="/">
+            <img src="../../assets/logo.png" alt="">多动屏
+          </router-link>
             <el-menu
                     :isCollapse="isCollapse"
-                    default-active="2"
+                    :default-active="$route.name"
                     class="el-menu-vertical-demo"
                     @open="handleOpen"
                     @close="handleClose"
@@ -13,17 +15,23 @@
                     background-color="#001529"
                     active-text-color="#ffffff">
 
-                <el-submenu index="1">
+                <template v-if="routers.length">
+                  <el-submenu :index="item.name"
+                              :key="item.path"
+                              v-if="!item.hidden"
+                              v-for="item in routers">
                     <template slot="title">
-                        <i class="fa fa-user"></i>
-                        <span>导航一</span>
+                      <i :class="item.icon" v-if="item.icon"></i>
+                      <span>{{item.meta.title}}</span>
                     </template>
-                    <el-menu-item-group>
-                        <el-menu-item index="1-1">选项1</el-menu-item>
-                        <el-menu-item index="1-2">选项2</el-menu-item>
-                        <el-menu-item index="1-3">选项3</el-menu-item>
+                    <el-menu-item-group v-if="item.children && item.children.length">
+                      <router-link :to="child.path" :key="child.path" v-for="child in item.children">
+                        <el-menu-item :showindex="child.path" :index="child.name" >{{child.meta.title}}</el-menu-item>
+                      </router-link>
                     </el-menu-item-group>
-                </el-submenu>
+                  </el-submenu>
+                </template>
+
             </el-menu>
         </el-scrollbar>
         <div class="page-container">
@@ -41,6 +49,9 @@
                     </el-dropdown>
                 </div>
             </div>
+
+           <slot></slot>
+
         </div>
     </div>
 
@@ -52,7 +63,7 @@
         name: "navbar" ,
         data(){
             return {
-                isCollapse : true
+                isCollapse : false
             }
         },
         methods : {
@@ -66,10 +77,12 @@
             handleClose(key, keyPath) {
                 console.log(key, keyPath);
             }
-        }
+        },
     }
 </script>
 
 <style scoped>
-
+  .el-scrollbar__wrap {
+    overflow-x: hidden;
+  }
 </style>

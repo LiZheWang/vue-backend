@@ -1,26 +1,14 @@
 <template>
   <Childpage>
+    <div>store1</div>
     <router-link :to="{name:'Store1'}">store1</router-link>
     <router-link :to="{name:'Store2'}">store2</router-link>
   </Childpage>
 </template>
 
 <script>
-
-    import Childpage from '@views/layou/Childpage'
-
-
     export default {
-        name: "Home",
-        components : {Childpage} ,
-        created() {
-        },
-
-        methods: {
-
-        }
-
-
+        name: "store1" ,
     }
 </script>
 

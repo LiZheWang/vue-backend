@@ -14,6 +14,25 @@ import i18n from './lang'
 global.i18n = i18n ;
 
 
+//全局混入页面初始化组件
+import Childpage from '@views/layou/Childpage'
+Vue.mixin({
+  components : {Childpage},
+  computed : {
+    routes(){
+      if( this.$route.matched && this.$route.matched.length ){
+        return this.$route.matched ;
+      }
+      return [] ;
+    },
+    routers(){
+      if( this.$router.options && this.$router.options.routes && this.$router.options.routes.length ){
+          return this.$router.options.routes ;
+      }
+      return [] ;
+    }
+  }
+});
 
 import 'element-ui/lib/theme-chalk/index.css';
 

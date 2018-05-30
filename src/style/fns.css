@@ -62,19 +62,18 @@
 .page-container {
   margin-left: 255px;
 }
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 255px;
-}
 .scrollbarLeftmenuWrap {
   position: fixed;
   display: block;
   z-index: 10 ;
+  width: 255px;
   height: 100%;
+  overflow: hidden;
   left: 0;
   top: 0;
-  overflow: hidden;
   background: #001529;
   /*element-ui左侧菜单样式修改   不喜欢想用默认的可以直接删掉   start*/
+  /*选中的项目*/
   /*element-ui左侧菜单样式修改   不喜欢想用默认的可以直接删掉   end*/
 }
 .scrollbarLeftmenuWrap .systemLogo {
@@ -103,27 +102,23 @@
   margin-right: 4px;
   font-size: 18px;
 }
-.scrollbarLeftmenuWrap .el-scrollbar__wrap {
-  overflow: hidden;
-}
 .scrollbarLeftmenuWrap .el-menu-item-group__title {
-  padding: 3px 0 3px 20px;
-}
-.scrollbarLeftmenuWrap .el-menu-item-group > ul > .el-menu-item {
-  background: #000C17!important;
-  height: 40px;
-  line-height: 40px;
-}
-.scrollbarLeftmenuWrap .el-menu-item-group > ul > .el-menu-item.is-active {
-  background: #1890ff!important;
+  padding: 0px 0 0px 20px;
 }
 .scrollbarLeftmenuWrap .el-submenu .el-menu-item {
   min-width: auto;
 }
-.scrollbarLeftmenuWrap .el-menu-item,
 .scrollbarLeftmenuWrap .el-submenu__title {
+  height: 50px;
+  line-height: 50px;
+}
+.scrollbarLeftmenuWrap li.el-menu-item {
+  background: #000C17!important;
   height: 45px;
   line-height: 45px;
+}
+.scrollbarLeftmenuWrap li.is-active {
+  background: #1890ff!important;
 }
 /*左侧菜单  end*/
 /*页面header  start*/
@@ -158,5 +153,22 @@
 .pageHeader .rightTools .user:hover,
 .pageHeader .onoffButton:hover {
   background: #e6f7ff;
+}
+.childPage .childPageTitle {
+  background: #fff;
+  padding: 20px;
+  border-bottom: 1px solid #e8e8e8;
+}
+.childPage .childPageBody {
+  margin: 20px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 1px 1px 6px rgba(0, 21, 41, 0.08);
+  border-radius: 3px;
+}
+.comTitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.85);
 }
 /*页面header end*/
