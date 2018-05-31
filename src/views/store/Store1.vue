@@ -1,17 +1,27 @@
 <template>
-  <Childpage>
-    <div>store1</div>
-    <router-link :to="{name:'Store1'}">store1</router-link>
-    <router-link :to="{name:'Store2'}">store2</router-link>
-  </Childpage>
+    <Childpage>
+        <div class="names">store1</div>
+
+        <el-button type="primary" @click="click">i18n测试</el-button>
+
+    </Childpage>
 </template>
 
 <script>
     export default {
-        name: "store1" ,
+        name: "store1",
+        methods : {
+            click(){
+                this.comRemove({
+                    success : () => {
+
+                    }
+                })
+            }
+        }
     }
 </script>
 
-<style scoped>
+<style scoped lang="less">
 
 </style>

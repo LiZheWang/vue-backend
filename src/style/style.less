@@ -1,20 +1,52 @@
 @charset "utf-8";
-@import "fns.css";
+@import "fns.less";
+
 /*页面初始化*/
-body{
+* {
+  outline: none;
+}
+
+html,body{
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
   padding: 0;
   margin: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
   background: #F0F2F5;
-
   font-size: 14px;
-  color: rgba(0,0,0,.65);
+  color: @textColor;
 }
-a{text-decoration: none;}
 
+a {
+  text-decoration: none;
+  color: #409eff;
+}
 
+a:hover {
+  color: @primary;
+}
 
+/*element-ui 样式修改 start*/
+//表单一行显示的时候  不需要margin-bottom
+.el-form--inline .el-form-item {
+  margin-bottom: 0px;
+}
+//面包屑可点击链接不加粗
+.el-breadcrumb__inner a, .el-breadcrumb__inner.is-link {
+  font-weight: 500;
+}
+//左侧菜单禁用x轴滚动条
+.scrollbarLeftmenuWrap > .el-scrollbar__wrap {
+  overflow-x: hidden;
+}
+//修改中间内容区域滚动条的颜色
+.childPageBody .el-scrollbar__thumb{
+  background-color: rgba(0,0,0,0.5);
+}
+
+/*element-ui 样式修改 end*/
 
 
 

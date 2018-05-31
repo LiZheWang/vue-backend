@@ -108,6 +108,9 @@
 .scrollbarLeftmenuWrap .el-submenu .el-menu-item {
   min-width: auto;
 }
+.scrollbarLeftmenuWrap .el-menu {
+  border-right: 0;
+}
 .scrollbarLeftmenuWrap .el-submenu__title {
   height: 50px;
   line-height: 50px;
@@ -118,7 +121,7 @@
   line-height: 45px;
 }
 .scrollbarLeftmenuWrap li.is-active {
-  background: #1890ff!important;
+  background: #1890ff !important;
 }
 /*左侧菜单  end*/
 /*页面header  start*/
@@ -172,3 +175,4 @@
   color: rgba(0, 0, 0, 0.85);
 }
 /*页面header end*/
+/*# sourceMappingURL=fns.css.map */

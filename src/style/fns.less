@@ -1,170 +1,84 @@
-.tc{text-align: center;}
-.tl{text-align: left;}
-.tr{text-align: right;}
-.rela{position: relative;}
-.abso{position: absolute;}
-.fl{float: left;}
-.fr{float: right;}
-.hide{display: none;}
-.clearfix::before , .clearfix::after , .clear,
-.row::before , .row::after
-{
+.tc {
+  text-align: center;
+}
+
+.tl {
+  text-align: left;
+}
+
+.tr {
+  text-align: right;
+}
+
+.rela {
+  position: relative;
+}
+
+.abso {
+  position: absolute;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.hide {
+  display: none;
+}
+
+.clearfix::before, .clearfix::after, .clear,
+.row::before, .row::after {
   clear: both;
-  content : ' ' ;
+  content: ' ';
   display: block;
   width: 0px;
   height: 0px;
   overflow: hidden;
 }
-.fontnum{overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
-.css(@name,@value){
-  -webkit-@{name}:@value ;
-  -ms-@{name}:@value ;
-  -moz-@{name}:@value ;
-    @{name}:@value ;
+
+.fontnum {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-/*转场 start*/
-.slide-fade-enter-active,
-.slide-fade-leave-active {
-  transition: all 0.4s ease-out;
-  position: absolute;
+.css(@name,@value) {
+  -webkit-@{name}: @value;
+  -ms-@{name}: @value;
+  -moz-@{name}: @value;
+    @{name}: @value;
 }
-.slide-fade-enter {
-  opacity: 0;
-  transform: translateX(50px);
-}
-.slide-fade-leave-active{
-  opacity: 0;
-  transform: translateX(-50px);
-}
-/*转场 end*/
 
-@leftmentWidth : 255px ;
-.logotop{
+//高亮颜色
+@primary: #1890ff;
+//默认颜色
+@textColor: rgba(0, 0, 0, .65);
+
+//操作菜单宽度
+@leftmentWidth: 240px;
+@headerHeight:60px;
+.logotop {
   height: 60px;
   line-height: 60px;
 }
 
-/*左侧菜单  start*/
-.page-container{
-  margin-left: @leftmentWidth;
-}
-.scrollbarLeftmenuWrap{
-  position: fixed;
-  display: block;
-  z-index: 10 ;
-  width: @leftmentWidth;
-  height: 100%;
-  overflow: hidden;
-  left: 0;
-  top: 0;
-  background: #001529;
-
-  .systemLogo{
-    .logotop ;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #fff;
-    font-size: 18px;
-    background: #002140;
-    text-align: center;
-    font-family: "Myriad Pro","Helvetica Neue",Arial,Helvetica,sans-serif;
-    font-weight: 600;
-    padding-right: 17px;
-    img{
-      display: 30px;
-      height: 30px;
-      overflow: hidden;
-      border-radius: 50%;
-      margin-right: 10px;
-    }
-  }
-  .fa{color:#fff;margin-right: 4px;font-size:18px;}
-
-  /*element-ui左侧菜单样式修改   不喜欢想用默认的可以直接删掉   start*/
-  .el-menu-item-group__title{padding:0px 0 0px 20px}
-  .el-submenu .el-menu-item{min-width: auto;}
-  //标题
-  .el-submenu__title{
-    height: 50px;
-    line-height: 50px;
-  }
-  //子项目
-  li.el-menu-item{
-    background: #000C17!important;
-    height: 45px;
-    line-height: 45px;
-  }
-  /*选中的项目*/
-  li.is-active{
-    background: #1890ff!important;
-  }
-  /*element-ui左侧菜单样式修改   不喜欢想用默认的可以直接删掉   end*/
-}
-/*左侧菜单  end*/
-
-
-/*页面header  start*/
-.pageHeader{
-  .logotop ;
-  padding: 0 12px 0 0;
-  background: #fff;
-  -webkit-box-shadow: 0 1px 4px rgba(0,21,41,.08);
-  box-shadow: 0 1px 4px rgba(0,21,41,.08);
-  position: relative;
-  .onoffButton{
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgba(0,0,0,.65);
-  }
-  .rightTools{
-    position: absolute;
-    top: 0;
-    right: 0px;
-    .user .el-dropdown-link{
-      cursor: pointer;
-      padding: 0 20px;
-      line-height: 60px;
-      display: block;
-    }
-
-  }
-
-  .rightTools .user:hover , .onoffButton:hover{
-    background: #e6f7ff;
-  }
+.borderBottom {
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
 }
 
-
-.childPage{
-  .childPageTitle{
-    background: #fff;
-    padding: 20px;
-    border-bottom: 1px solid #e8e8e8;
-  }
-  .childPageBody{
-    margin: 20px;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 1px 1px 6px rgba(0, 21, 41, 0.08);
-    border-radius: 3px;
-  }
+.borderRight {
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
 }
-.comTitle{
+.comTitle {
   font-size: 20px;
   font-weight: 500;
-  color: rgba(0,0,0,.85);
+  color: rgba(0, 0, 0, .85);
 }
 
-
-/*页面header end*/
 
 
 

@@ -1,15 +1,96 @@
 @charset "utf-8";
-@import "fns.css";
+.tc {
+  text-align: center;
+}
+.tl {
+  text-align: left;
+}
+.tr {
+  text-align: right;
+}
+.rela {
+  position: relative;
+}
+.abso {
+  position: absolute;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.hide {
+  display: none;
+}
+.clearfix::before,
+.clearfix::after,
+.clear,
+.row::before,
+.row::after {
+  clear: both;
+  content: ' ';
+  display: block;
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+}
+.fontnum {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.logotop {
+  height: 60px;
+  line-height: 60px;
+}
+.borderBottom {
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+}
+.borderRight {
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+}
+.comTitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.85);
+}
 /*页面初始化*/
+* {
+  outline: none;
+}
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
 body {
   padding: 0;
   margin: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
   background: #F0F2F5;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.65);
 }
 a {
   text-decoration: none;
+  color: #409eff;
 }
+a:hover {
+  color: #1890ff;
+}
+/*element-ui 样式修改 start*/
+.el-form--inline .el-form-item {
+  margin-bottom: 0px;
+}
+.el-breadcrumb__inner a,
+.el-breadcrumb__inner.is-link {
+  font-weight: 500;
+}
+.scrollbarLeftmenuWrap > .el-scrollbar__wrap {
+  overflow-x: hidden;
+}
+.childPageBody .el-scrollbar__thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/*element-ui 样式修改 end*/
+/*# sourceMappingURL=style.css.map */

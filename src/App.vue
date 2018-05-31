@@ -1,26 +1,18 @@
 <template>
     <div id="app" class="appPage">
-        <Navbar>
-          <transition name="slide-fade" mode="out-in">
-            <router-view></router-view>
-          </transition>
-        </Navbar>
-
+        <Transition-router></Transition-router>
     </div>
 </template>
 
 <script>
-
-    import Navbar from '@views/layou/Navbar'
-
+    import TransitionRouter from '@views/layou/TransitionRouter'
     export default {
-        name: 'App' ,
-        components:{Navbar} ,
+        name: 'App',
+        components: {TransitionRouter},
     }
 </script>
 
 <style>
-
 
 
 </style>
