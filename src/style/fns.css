@@ -34,145 +34,41 @@
   height: 0px;
   overflow: hidden;
 }
+.mb0 {
+  margin-bottom: 0;
+}
+.mb5 {
+  margin-bottom: 5px;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+.mt0 {
+  margin-top: 0;
+}
+.mt10 {
+  margin-top: 10px;
+}
+.mt20 {
+  margin-top: 20px;
+}
 .fontnum {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-/*转场 start*/
-.slide-fade-enter-active,
-.slide-fade-leave-active {
-  transition: all 0.4s ease-out;
-  position: absolute;
-}
-.slide-fade-enter {
-  opacity: 0;
-  transform: translateX(50px);
-}
-.slide-fade-leave-active {
-  opacity: 0;
-  transform: translateX(-50px);
-}
-/*转场 end*/
 .logotop {
   height: 60px;
   line-height: 60px;
 }
-/*左侧菜单  start*/
-.page-container {
-  margin-left: 255px;
-}
-.scrollbarLeftmenuWrap {
-  position: fixed;
-  display: block;
-  z-index: 10 ;
-  width: 255px;
-  height: 100%;
-  overflow: hidden;
-  left: 0;
-  top: 0;
-  background: #001529;
-  /*element-ui左侧菜单样式修改   不喜欢想用默认的可以直接删掉   start*/
-  /*选中的项目*/
-  /*element-ui左侧菜单样式修改   不喜欢想用默认的可以直接删掉   end*/
-}
-.scrollbarLeftmenuWrap .systemLogo {
-  height: 60px;
-  line-height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 18px;
-  background: #002140;
-  text-align: center;
-  font-family: "Myriad Pro", "Helvetica Neue", Arial, Helvetica, sans-serif;
-  font-weight: 600;
-  padding-right: 17px;
-}
-.scrollbarLeftmenuWrap .systemLogo img {
-  display: 30px;
-  height: 30px;
-  overflow: hidden;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-.scrollbarLeftmenuWrap .fa {
-  color: #fff;
-  margin-right: 4px;
-  font-size: 18px;
-}
-.scrollbarLeftmenuWrap .el-menu-item-group__title {
-  padding: 0px 0 0px 20px;
-}
-.scrollbarLeftmenuWrap .el-submenu .el-menu-item {
-  min-width: auto;
-}
-.scrollbarLeftmenuWrap .el-menu {
-  border-right: 0;
-}
-.scrollbarLeftmenuWrap .el-submenu__title {
-  height: 50px;
-  line-height: 50px;
-}
-.scrollbarLeftmenuWrap li.el-menu-item {
-  background: #000C17!important;
-  height: 45px;
-  line-height: 45px;
-}
-.scrollbarLeftmenuWrap li.is-active {
-  background: #1890ff !important;
-}
-/*左侧菜单  end*/
-/*页面header  start*/
-.pageHeader {
-  height: 60px;
-  line-height: 60px;
-  padding: 0 12px 0 0;
-  background: #fff;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+.borderBottom {
   box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
-  position: relative;
 }
-.pageHeader .onoffButton {
-  width: 60px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: rgba(0, 0, 0, 0.65);
-}
-.pageHeader .rightTools {
-  position: absolute;
-  top: 0;
-  right: 0px;
-}
-.pageHeader .rightTools .user .el-dropdown-link {
-  cursor: pointer;
-  padding: 0 20px;
-  line-height: 60px;
-  display: block;
-}
-.pageHeader .rightTools .user:hover,
-.pageHeader .onoffButton:hover {
-  background: #e6f7ff;
-}
-.childPage .childPageTitle {
-  background: #fff;
-  padding: 20px;
-  border-bottom: 1px solid #e8e8e8;
-}
-.childPage .childPageBody {
-  margin: 20px;
-  background: #fff;
-  padding: 20px;
-  box-shadow: 1px 1px 6px rgba(0, 21, 41, 0.08);
-  border-radius: 3px;
+.borderRight {
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
 }
 .comTitle {
   font-size: 20px;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.85);
 }
-/*页面header end*/
-/*# sourceMappingURL=fns.css.map */

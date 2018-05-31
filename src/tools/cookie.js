@@ -25,5 +25,6 @@ export default {
     get ,
     set ,
     del ,
+    remove : del ,
     clearAll
 }

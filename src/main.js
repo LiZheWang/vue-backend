@@ -9,6 +9,8 @@ import router from './router'
 import { sync } from 'vuex-router-sync'
 import * as filters from './filters'
 import dialog from '@tools/dialog'
+import cookie from '@tools/cookie'
+
 import i18n from './lang'
 //定义全局变量
 global.i18n = i18n ;
@@ -30,6 +32,11 @@ Vue.mixin({
           return this.$router.options.routes ;
       }
       return [] ;
+    },
+    sessionUser(){
+      var user = cookie.get("user") ;
+      if( user ) return user ;
+      return null ;
     }
   }
 });

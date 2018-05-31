@@ -83,13 +83,14 @@
 
                     <a href="javascript:;" v-popover:popover class="navbarBtn" ><i class="fa fa-bell"></i></a>
 
-                    <el-dropdown class="user" trigger="click">
+                    <el-dropdown class="user" trigger="click" @command="userDropdown">
                         <span class="el-dropdown-link">
-                            用户名<i class="el-icon-arrow-down el-icon--right"></i>
+                          {{sessionUser ? sessionUser.name : '出错了'}}
+                          <i class="el-icon-arrow-down el-icon--right"></i>
                         </span>
                         <el-dropdown-menu slot="dropdown">
-                            <el-dropdown-item>修改密码</el-dropdown-item>
-                            <el-dropdown-item divided>退出登录</el-dropdown-item>
+                            <el-dropdown-item command="edit_password">修改密码</el-dropdown-item>
+                            <el-dropdown-item divided command="signout" >退出登录</el-dropdown-item>
                         </el-dropdown-menu>
                     </el-dropdown>
                 </div>
@@ -114,6 +115,7 @@
     import {setI18nLocale} from '@tools/common'
     import screenfull from 'screenfull'
     import Itemlist from '@com/Itemlist'
+    import cookie from '@tools/cookie'
 
     export default {
         name: "navbar",
@@ -138,6 +140,14 @@
             },
             changeLanguage(val){
                 setI18nLocale.call(this,val);
+            },
+            userDropdown(type){
+              if( type == "signout" ){
+                cookie.remove("user") ;
+                this.$router.push('/signin') ;
+                this.alertBox("退出登录成功") ;
+              }
+
             }
         },
 

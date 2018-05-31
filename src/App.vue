@@ -1,14 +1,12 @@
 <template>
     <div id="app" class="appPage">
-        <Transition-router></Transition-router>
+      <router-view></router-view>
     </div>
 </template>
 
 <script>
-    import TransitionRouter from '@views/layou/TransitionRouter'
     export default {
-        name: 'App',
-        components: {TransitionRouter},
+        name: 'App'
     }
 </script>
 

@@ -35,6 +35,24 @@
   height: 0px;
   overflow: hidden;
 }
+.mb0 {
+  margin-bottom: 0;
+}
+.mb5 {
+  margin-bottom: 5px;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+.mt0 {
+  margin-top: 0;
+}
+.mt10 {
+  margin-top: 10px;
+}
+.mt20 {
+  margin-top: 20px;
+}
 .fontnum {
   overflow: hidden;
   white-space: nowrap;
@@ -92,5 +110,11 @@ a:hover {
 .childPageBody .el-scrollbar__thumb {
   background-color: rgba(0, 0, 0, 0.5);
 }
+.el-button.block {
+  display: block;
+  width: 100%;
+}
+.el-checkbox__label {
+  padding-left: 5px;
+}
 /*element-ui 样式修改 end*/
-/*# sourceMappingURL=style.css.map */
