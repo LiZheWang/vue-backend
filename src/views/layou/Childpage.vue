@@ -6,6 +6,7 @@
                 <template v-if="routes.length">
                     <el-breadcrumb-item
                             v-for="item in routes"
+                            :hidden="item.hidden"
                             :key="item.path"
                             v-if="item.name != 'Home'"
                             :to="item.path">{{item.meta.title}}</el-breadcrumb-item>

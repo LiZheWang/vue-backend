@@ -2,7 +2,7 @@
 
     <div class="navbarWrap">
         <!--左侧菜单-->
-        <el-scrollbar class="scrollbarLeftmenuWrap" >
+        <el-scrollbar class="scrollbarLeftmenuWrap">
             <el-menu :default-active="$route.name" class="el-menu-vertical-demo" :collapse="isCollapse">
                 <router-link class="systemLogo" to="/">
                     <img src="../../assets/logo.png" alt="">
@@ -19,7 +19,8 @@
                         </template>
                         <el-menu-item-group v-if="item.children && item.children.length">
                             <router-link :to="{name:child.name}" :key="child.path" v-for="child in item.children">
-                                <el-menu-item :showindex="child.path" :index="child.name">{{child.meta.title}}</el-menu-item>
+                                <el-menu-item :showindex="child.path" :index="child.name">{{child.meta.title}}
+                                </el-menu-item>
                             </router-link>
                         </el-menu-item-group>
                     </el-submenu>
@@ -33,14 +34,15 @@
             <div class="pageHeader">
 
                 <div class="left">
-                    <el-tooltip v-if="isScreen" class="item" effect="dark" :content="isCollapse ? '展开菜单' : '折叠菜单'" placement="bottom">
+                    <el-tooltip v-if="isScreen" class="item" effect="dark" :content="isCollapse ? '展开菜单' : '折叠菜单'"
+                                placement="bottom">
                         <a href="javascript:;" @click="changeCollapse" class="onoffButton"><i class="fa fa-outdent"></i></a>
                     </el-tooltip>
                 </div>
 
 
                 <div class="rightTools">
-                    <el-dropdown class="navbarBtn" trigger="click"  @command="changeLanguage">
+                    <el-dropdown class="navbarBtn" trigger="click" @command="changeLanguage">
                         <span class="el-dropdown-link">
                             <i class="fa fa-font-awesome"></i>
                         </span>
@@ -81,7 +83,7 @@
 
                     </el-popover>
 
-                    <a href="javascript:;" v-popover:popover class="navbarBtn" ><i class="fa fa-bell"></i></a>
+                    <a href="javascript:;" v-popover:popover class="navbarBtn"><i class="fa fa-bell"></i></a>
 
                     <el-dropdown class="user" trigger="click" @command="userDropdown">
                         <span class="el-dropdown-link">
@@ -90,7 +92,7 @@
                         </span>
                         <el-dropdown-menu slot="dropdown">
                             <el-dropdown-item command="edit_password">修改密码</el-dropdown-item>
-                            <el-dropdown-item divided command="signout" >退出登录</el-dropdown-item>
+                            <el-dropdown-item divided command="signout">退出登录</el-dropdown-item>
                         </el-dropdown-menu>
                     </el-dropdown>
                 </div>
@@ -98,11 +100,9 @@
 
 
             <!--页面内容-->
-            <div class="pageBody"><slot></slot></div>
-
-
-
-
+            <div class="pageBody">
+                <slot></slot>
+            </div>
 
 
         </div>
@@ -115,45 +115,44 @@
     import {setI18nLocale} from '@tools/common'
     import screenfull from 'screenfull'
     import Itemlist from '@com/Itemlist'
-    import cookie from '@tools/cookie'
+    import {signout} from '@tools/common'
 
     export default {
         name: "navbar",
-        components:{Itemlist} ,
+        components: {Itemlist},
         data() {
             return {
-                isCollapse: false ,
-                tabState : 'first' ,
-                isShowName : true
+                isCollapse: false,
+                tabState: 'first',
+                isShowName: true
             }
         },
         methods: {
-            toggleScreen(){
+            toggleScreen() {
                 screenfull.toggle();
             },
-            tabPopoverShow(){
+            tabPopoverShow() {
 
             },
             changeCollapse() {
                 this.isCollapse = !this.isCollapse;
-                    this.isShowName = !this.isCollapse ;
+                this.isShowName = !this.isCollapse;
             },
-            changeLanguage(val){
-                setI18nLocale.call(this,val);
+            changeLanguage(val) {
+                setI18nLocale.call(this, val);
             },
-            userDropdown(type){
-              if( type == "signout" ){
-                cookie.remove("user") ;
-                this.$router.push('/signin') ;
-                this.alertBox("退出登录成功") ;
-              }
+            userDropdown(type) {
+                if (type == "signout") {
+                    signout();
+                    this.alertBox("退出登录成功");
+                }
 
             }
         },
 
-        computed : {
-            isScreen(){
-                return screenfull.enabled ;
+        computed: {
+            isScreen() {
+                return screenfull.enabled;
             },
         }
 
@@ -174,18 +173,19 @@
             height: 100%;
             flex: 1;
             position: relative;
-            .pageHeader{
+            .pageHeader {
                 position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
             }
-            .pageBody{
+            .pageBody {
                 height: 100%;
                 padding-top: @headerHeight;
             }
         }
     }
+
     //左侧菜单
     .scrollbarLeftmenuWrap {
         z-index: 10;
@@ -233,7 +233,6 @@
         }
     }
 
-
     //顶部header
     .pageHeader {
         .logotop ;
@@ -250,7 +249,7 @@
             align-items: center;
             color: rgba(0, 0, 0, .65);
             cursor: pointer;
-            .el-dropdown-link{
+            .el-dropdown-link {
                 width: 100%;
                 text-align: center;
             }

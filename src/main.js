@@ -10,13 +10,11 @@ import { sync } from 'vuex-router-sync'
 import * as filters from './filters'
 import dialog from '@tools/dialog'
 import cookie from '@tools/cookie'
-
+import {getUser} from '@tools/common'
 import i18n from './lang'
-//定义全局变量
-global.i18n = i18n ;
 
 
-//全局混入页面初始化组件
+//全局混入
 import Childpage from '@views/layou/Childpage'
 Vue.mixin({
   components : {Childpage},
@@ -33,8 +31,9 @@ Vue.mixin({
       }
       return [] ;
     },
+    //当前用户资料信息
     sessionUser(){
-      var user = cookie.get("user") ;
+      var user = getUser() ;
       if( user ) return user ;
       return null ;
     }
@@ -68,7 +67,7 @@ sync(store, router);
 
 
 
-new Vue({
+global.wlzVue = new Vue({
   el: '#app',
   router,
   store ,

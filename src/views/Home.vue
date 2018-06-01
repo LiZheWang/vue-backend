@@ -1,8 +1,8 @@
 <template>
     <Navbar>
         <Childpage>
-            <router-link :to="{name:'Store1'}">store1</router-link>
-            <router-link :to="{name:'Store2'}">store2</router-link>
+            欢迎登录系统
+            <el-button type="primary" @click="testRoute">测试currentRoute</el-button>
         </Childpage>
     </Navbar>
 
@@ -12,14 +12,22 @@
     import Navbar from '@views/layou/Navbar'
     import Childpage from '@views/layou/Childpage'
 
-
     export default {
         name: "Home",
         components: {Navbar,Childpage},
         created() {
+
         },
 
-        methods: {}
+        methods: {
+            testRoute(){
+                this.comRemove({
+                    success : () => {
+
+                    }
+                });
+            }
+        }
 
 
     }

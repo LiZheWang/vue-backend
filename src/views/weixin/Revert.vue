@@ -1,12 +1,12 @@
 <template>
     <Childpage>
-
+        <div>aaaaa</div>
     </Childpage>
 </template>
 
 <script>
     export default {
-        name: "" ,
+        name: "Revert" ,
         components:{} ,
         mixins : {} ,
         data(){

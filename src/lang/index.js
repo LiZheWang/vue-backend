@@ -6,7 +6,7 @@ import enLocale from 'element-ui/lib/locale/lang/en'
 import cnLocale from 'element-ui/lib/locale/lang/zh-CN'
 import cn from './cn'
 import en from './en'
-import cookie from '@tools/cookie'
+import {getLocale} from '@tools/common'
 
 Vue.use(VueI18n) ;
 
@@ -22,7 +22,7 @@ const messages = {
     }
 }
 
-let locale = cookie.get("locale") || 'cn' ;
+let locale = getLocale() ;
 
 const i18n = new VueI18n({
     locale: locale,
